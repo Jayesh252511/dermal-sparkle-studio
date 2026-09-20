@@ -16,6 +16,11 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        nav: "rounded-full bg-foreground px-5 text-background shadow-nav hover:-translate-y-0.5 hover:bg-foreground/90",
+        media:
+          "rounded-full border border-overlay-border bg-overlay text-overlay-foreground shadow-media backdrop-blur-md hover:bg-overlay/90",
+        player:
+          "rounded-full border border-player-border bg-player-control text-player-foreground backdrop-blur-md hover:bg-player-control-hover",
       },
       size: {
         default: "h-9 px-4 py-2",
