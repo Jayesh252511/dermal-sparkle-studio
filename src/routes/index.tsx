@@ -11,8 +11,17 @@ import video5 from "@/assets/dermexcel-5.mp4.asset.json";
 import video6 from "@/assets/dermexcel-6.mp4.asset.json";
 import video7 from "@/assets/dermexcel-7.mp4.asset.json";
 import video8 from "@/assets/dermexcel-8.mp4.asset.json";
+import poster1 from "@/assets/dermexcel-poster-1.jpg.asset.json";
+import poster2 from "@/assets/dermexcel-poster-3.jpg.asset.json";
+import poster3 from "@/assets/dermexcel-poster-2.jpg.asset.json";
+import poster4 from "@/assets/dermexcel-poster-5.jpg.asset.json";
+import poster5 from "@/assets/dermexcel-poster-6.jpg.asset.json";
+import poster6 from "@/assets/dermexcel-poster-4.jpg.asset.json";
+import poster7 from "@/assets/dermexcel-poster-7.jpg.asset.json";
+import poster8 from "@/assets/dermexcel-poster-8.jpg.asset.json";
 
 const videos = [video1.url, video2.url, video3.url, video4.url, video5.url, video6.url, video7.url, video8.url];
+const posters = [poster1.url, poster2.url, poster3.url, poster4.url, poster5.url, poster6.url, poster7.url, poster8.url];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -131,7 +140,7 @@ function Index() {
               onClick={() => openVideo(index)}
               aria-label={`Play Dermexcel film ${index + 1} with sound`}
             >
-              <video src={src} autoPlay muted loop playsInline preload={index < 4 ? "auto" : "metadata"} aria-hidden="true" />
+              <video src={src} poster={posters[index]} autoPlay muted loop playsInline preload="auto" aria-hidden="true" />
               <span className="tile-shine" aria-hidden="true" />
               <span className="tile-play"><Play fill="currentColor" /> <span>Play with sound</span></span>
             </button>
@@ -151,6 +160,7 @@ function Index() {
               ref={playerRef}
               className="player-video"
               src={videos[activeVideo]}
+              poster={posters[activeVideo]}
               autoPlay
               playsInline
               onPlay={() => setIsPlaying(true)}
